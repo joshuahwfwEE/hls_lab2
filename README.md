@@ -22,4 +22,19 @@ dataflow and deadlock
    
 4. dataflow test  
 
+
+
 5. deadlock test  
+//////////////////////////////////////////////////////////////////////////////
+// ERROR!!! DEADLOCK DETECTED at 10210000 ns! SIMULATION WILL BE STOPPED! //
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////
+// Dependence cycle 1:
+// (1): Process: example.proc_1_U0.proc_1_2_U0
+//      Blocked by empty input FIFO 'example.proc_1_U0.data_channel2_U' written by process 'example.proc_1_U0.proc_1_1_U0'
+// (2): Process: example.proc_1_U0.proc_1_1_U0
+//      Blocked by full output FIFO 'example.proc_1_U0.data_channel1_U' read by process 'example.proc_1_U0.proc_1_2_U0'
+////////////////////////////////////////////////////////////////////////
+// Totally 1 cycles detected!
+////////////////////////////////////////////////////////////////////////
+$finish called at time : 10260 ns : File "/home/joshua/work/HLSIP/ntu_boledulab/labA/Dataflow_Debug_and_Optimization/deadlock/example/solution1/sim/verilog/AESL_deadlock_report_unit.v" Line 667
