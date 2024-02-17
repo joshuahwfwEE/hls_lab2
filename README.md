@@ -1,6 +1,5 @@
 # hls_labA
-dataflow and deadlock  
-
+dataflow and deadlock with data dependency issue
    
 1. foo:  
    this module implement an adder and a multplier and a latch in this circuit,
