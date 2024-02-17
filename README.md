@@ -2,11 +2,10 @@
 dataflow and deadlock with data dependency issue
    
 1. foo:  
-   this module implement an adder and a multplier and a latch in this circuit,
-   adder takes l2 and Latch's output as its inputs and then multiplier takes adder's output and l1 as its inputs
+   this simple module implement an adder and a multplier and a latch in this circuit,
+   adder takes l2 and Latch's output as its inputs and then multiplier takes adder's output and l1 as its inputs  
+    
 
-   given an example design of testing the combination logic of above 2 module:    
-    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/design1_pattern_plus_foo.png?raw=true)    
 
 2. double foo:  
    this module implement use 2 foo module,  
