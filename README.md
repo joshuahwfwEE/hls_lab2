@@ -1,4 +1,4 @@
-# hls_lab2
+# hls_labA
 dataflow and deadlock  
 
    
@@ -24,10 +24,10 @@ dataflow and deadlock
 
 
 
-5. deadlock test  
+5. deadlock test:
+   
 //////////////////////////////////////////////////////////////////////////////  
-// ERROR!!! DEADLOCK DETECTED at 10210000 ns!  
-  SIMULATION WILL BE STOPPED!     
+// ERROR!!! DEADLOCK DETECTED at 10210000 ns! SIMULATION WILL BE STOPPED!       
 //////////////////////////////////////////////////////////////////////////////  
 /////////////////////////  
 // Dependence cycle 1:  
@@ -39,3 +39,21 @@ dataflow and deadlock
 // Totally 1 cycles detected!  
 ////////////////////////////////////////////////////////////////////////  
 $finish called at time : 10260 ns : File "/home/joshua/work/HLSIP/ntu_boledulab/labA/Dataflow_Debug_and_Optimization/deadlock/example/solution1/sim/verilog/AESL_deadlock_report_unit.v" Line 667  
+
+deadlocks reasons:  
+
+Blocked Writer in Deadlocks:  
+at least one writer (module or stage writing to a FIFO) is unable to make progress. This could happen when the writer is waiting for space in the FIFO to become available.  
+
+Insufficient FIFO Depths:
+especially when the rate of data production or consumption does not match the FIFO capacity. If a writer is frequently blocked due to a full FIFO, it can result in a deadlock situation.  
+
+Design Issues with Non-Blocking Operations:  
+Non-blocking reads or writes can sometimes cause unexpected behavior.   
+If a writer doesn't check whether there is space available (not full()) before writing or a reader doesn't check if data is available (not empty()) before reading,   
+it can lead to contention and potential deadlocks.
+
+Conditions Based on empty() and full():    
+The conditions based on the empty() and full() status of a FIFO are often used to check whether there is data to be read (not empty()) or space to write (not full()).     
+Incorrectly handling these conditions can lead to situations where a writer or reader might be waiting indefinitely, contributing to deadlocks.    
+
